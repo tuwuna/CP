@@ -6,7 +6,7 @@ const int N = 1e6 + 1;
 
 int n, m, ans = 0, l[N], c[N], a[N], orc[N], cnt[N];
 
-signed main() {
+int main() {
 	ios_base::sync_with_stdio(0), cin.tie(0);
 	cin >> n >> m;
 	int sum = 0;
