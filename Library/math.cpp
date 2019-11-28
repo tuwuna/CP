@@ -3,9 +3,6 @@ using ll = long long;
 using namespace std;
  
 const ll N = 2e5 + 5, MAX = 1e18, mod = 1e9 + 7;
- 
-int x;
-ll n, ans = 1;
 
 ll add(ll a, ll b) {
 	return (a % mod + b % mod) % mod;
