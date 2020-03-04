@@ -13,8 +13,7 @@ struct LCA_orz {
 	void dfs(int v, int p) {
 		euler[++id] = v;
 		for (auto u : adj[v]) {
-			if (h[u] == 0) {
-				h[u] = h[v] + 1;
+			if (u != p) {
 				dfs(u, v);
 				euler[++id] = v;
 			}
@@ -48,8 +47,10 @@ struct LCA_orz {
 	int get_min(int l, int r) {
 		int k = LOG[r - l + 1];
 		return min(mn[k][l], mn[k][r - (1 << k) + 1]).v;
+	}
+
 	int get(int u, int v) {
-		return LCA.get_min(min(LCA.tin[u], LCA.tin[v]), max(LCA.tout[u], LCA.tout[v]));
+		return get_min(min(tin[u], tin[v]), max(tout[u], tout[v]));
 	}
 
 } LCA;
