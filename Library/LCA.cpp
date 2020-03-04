@@ -48,10 +48,8 @@ struct LCA_orz {
 	int get_min(int l, int r) {
 		int k = LOG[r - l + 1];
 		return min(mn[k][l], mn[k][r - (1 << k) + 1]).v;
+	int get(int u, int v) {
+		return LCA.get_min(min(LCA.tin[u], LCA.tin[v]), max(LCA.tout[u], LCA.tout[v]));
 	}
 
 } LCA;
- 
-int get_lca(int u, int v) {
-	return LCA.get_min(min(LCA.tin[u], LCA.tin[v]), max(LCA.tout[u], LCA.tout[v]));
-}
