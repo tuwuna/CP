@@ -11,7 +11,6 @@ struct LCA_orz {
 	} mn[18][M];
 
 	void dfs(int v, int p) {
-		tin[v] = id;
 		euler[++id] = v;
 		for (auto u : adj[v]) {
 			if (h[u] == 0) {
@@ -20,7 +19,6 @@ struct LCA_orz {
 				euler[++id] = v;
 			}
 		}
-		tout[v] = id;
 	}
 
 	void setup() {
