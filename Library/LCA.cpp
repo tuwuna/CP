@@ -13,7 +13,8 @@ struct LCA_orz {
 	void dfs(int v, int p) {
 		euler[++id] = v;
 		for (auto u : adj[v]) {
-			if (u != p) {
+			if (h[u] == 0) {
+				h[u] = h[v] + 1;
 				dfs(u, v);
 				euler[++id] = v;
 			}
@@ -29,7 +30,7 @@ struct LCA_orz {
 				mn[j][i].h = INT_MAX;
 			}
 		}
-		dfs(1, 0);
+		dfs(h[1] = 1, 0);
 		memset(tin, 0x3f, sizeof tin);
 		for (int i = 1; i <= id; ++i) {
 			int x = euler[i];
