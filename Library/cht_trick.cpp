@@ -18,11 +18,11 @@ struct line {
 		cht.push_back(a);
 	}
 
-	ll y(int i, int x) {
+	ll y(int i, ll x) {
 		return cht[i].a * x + cht[i].b;
 	}
 
-	ll query(int x) {
+	ll query(ll x) {
 		int l = 0, r = cht.size() - 1;
 		ll ans = -LLONG_MAX;
 		while (l <= r) {
