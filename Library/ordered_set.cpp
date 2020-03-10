@@ -50,6 +50,6 @@ int main() {
 	os.update(4, 2); // 4 4
 	os.update(6, 1); // 4 4 6
 	os.update(4, -1); // 4 6
-	cout << os.find_by_order(2); // 6
-	cout << os.find_by_key(6); // 1
+	cout << os.find_by_order(2) << '\n'; // 6
+	cout << os.order_of_key(6); // 2
 }
