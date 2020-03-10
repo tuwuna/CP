@@ -5,6 +5,7 @@ using namespace std;
 const int N = 2e5 + 5, mod = 1e9 + 7;
 
 struct ordered_set {
+	
 	int sz = 0, bit[N];
 
 	int size() {
@@ -12,7 +13,7 @@ struct ordered_set {
 	}
 
 	void update(int k, int x) {
-		while (k <= N) {
+		while (k < N) {
 			bit[k] += x;
 			k += k & -k;
 		}
@@ -31,6 +32,16 @@ struct ordered_set {
 		}
 		return ans + 1;
 	}
+	
+	int order_of_key(int k) {
+		int ans = 0;
+		while (k >= 1) {
+			ans += bit[k];
+			k -= k & -k;
+		}
+		return ans;
+	}
+	
 };
 
 ordered_set os;
@@ -40,4 +51,5 @@ int main() {
 	os.update(6, 1); // 4 4 6
 	os.update(4, -1); // 4 6
 	cout << os.find_by_order(2); // 6
+	cout << os.find_by_key(6); // 1
 }
