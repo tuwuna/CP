@@ -1,9 +1,3 @@
-#include "bits/stdc++.h"
-using ll = long long;
-using namespace std;
-
-const int N = 2e5 + 5, mod = 1e9 + 7;
-
 struct ordered_set {
 	
 	int sz = 0, bit[N];
@@ -42,14 +36,4 @@ struct ordered_set {
 		return ans;
 	}
 	
-};
-
-ordered_set os;
-
-int main() {
-	os.update(4, 2); // 4 4
-	os.update(6, 1); // 4 4 6
-	os.update(4, -1); // 4 6
-	cout << os.find_by_order(2) << '\n'; // 6
-	cout << os.order_of_key(6); // 2
-}
+} os;
