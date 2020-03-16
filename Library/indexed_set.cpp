@@ -36,4 +36,4 @@ struct indexed_set {
 		return ans;
 	}
 	
-} os;
+} is;
