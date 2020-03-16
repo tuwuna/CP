@@ -1,4 +1,4 @@
-struct ordered_set {
+struct indexed_set {
 	
 	int sz = 0, bit[N];
 
