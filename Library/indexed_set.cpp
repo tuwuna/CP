@@ -8,7 +8,7 @@ typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_
 
 
 
-// 
+// log
 struct indexed_set {
 	
 	int sz = 0, bit[N];
@@ -50,7 +50,6 @@ struct indexed_set {
 } is;
 
 // log ^ 2
-
 const MAX = 1e9;
 
 struct indexed_set {
