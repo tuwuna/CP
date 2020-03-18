@@ -1,7 +1,7 @@
 struct dsu_orz {
 	int up[N], sz[N];
 	
-	void reset() {
+	void init() {
 		for (int i = 1; i <= n; i++) {
 			up[i] = i;
 			sz[i] = 1;
