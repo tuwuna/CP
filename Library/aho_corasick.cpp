@@ -1,6 +1,6 @@
 struct aho_corasick {
 	
-#define A 128
+#define A 26
 	int n = 0, sz = 0;
 	int sizes[N];
 	int child[N][A + 1];
@@ -23,7 +23,7 @@ struct aho_corasick {
 	void add(string& s) {
 		int ptr = 0;
 		for (auto& ch : s) {
-			int c = ch;
+			int c = ch - 'a';
 			if (!child[ptr][c]) {
 				child[ptr][c] = ++sz;
 			}
@@ -60,7 +60,7 @@ struct aho_corasick {
 	void fun(string& t) {
 		int ptr = 0;
 		for (int i = 0; i < t.size(); i++) {
-			int ch = t[i];
+			int ch = t[i] - 'a';
 			ptr = nxt[ptr][ch];
 			for (auto& cid : id[ptr]) {
 				occur[cid].push_back(i);
