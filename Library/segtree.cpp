@@ -5,7 +5,7 @@ struct segtree {
  
 	int lazy[N << 2], tree[N << 2];
  
-	void init() {
+	void reset() {
 		for (int i = 1; i < N << 2; i++) {
 			tree[i] = 0;
 		}
