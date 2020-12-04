@@ -83,7 +83,7 @@ int32_t main() {
     cin >> u >> v, g[u].push_back(v), g[v].push_back(u);
   dfs(1), hld(rt[1] = 1);
   for (int i = 1, t, u, v; i <= q; i++) {
-    read(t, u, v), u++;
+    cin >> t >> u >> v;
     if (t) cout << quy(u, v) << '\n';
     else upd(u, v);
   }
