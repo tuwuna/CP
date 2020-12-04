@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
-const ll N = 5e5 + 5;																																																																																								void read(int&n){n=0;while(1){char c=getchar_unlocked();if(c==' '||c=='\n')break;n=(n<<1)+(n<<3)+c-'0';}}void read(ll&n){n=0;while(1){char c=getchar_unlocked();if(c==' '||c=='\n')break;n=(n<<1)+(n<<3)+c-'0';}}void write(int n){if(n>9)write(n/10),putchar_unlocked(n%10+'0');else putchar_unlocked(n+'0');}void write(ll n){if(n>9)write(n/10),putchar_unlocked(n%10+'0');else putchar_unlocked(n+'0');}template<class F,class... Ts>void read(F&f,Ts&...ts){read(f);read(ts...);}template<class F,class... Ts>void write(F&f,Ts&...ts) {write(f);putchar_unlocked(' ');write(ts...);}template<class...Ts>void writeln(const Ts&...ts){write(ts...);putchar_unlocked('\n');}
+const ll N = 5e5 + 5;
 
 int n, q;
 int id, sz[N], par[N], p[N], V[N], rt[N], d[N];
@@ -77,14 +77,14 @@ ll quy(int u, int v, ll ans = 0) {
 }
 
 int32_t main() {
-  read(n, q);
+  cin >> n >> q;
   for (int i = 1; i <= n; i++) sz[i] = 1, read(a[i]);
   for (int i = 1, u, v; i < n; i++) 
-    read(u, v), u++, v++, g[u].push_back(v), g[v].push_back(u);
+    cin >> u >> v, g[u].push_back(v), g[v].push_back(u);
   dfs(1), hld(rt[1] = 1);
   for (int i = 1, t, u, v; i <= q; i++) {
     read(t, u, v), u++;
-    if (t) writeln(quy(u, v + 1));
+    if (t) cout << quy(u, v) << '\n';
     else upd(u, v);
   }
 }
